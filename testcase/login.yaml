@@ -1,0 +1,82 @@
+login_success:
+
+  # 正常登录场景
+  - username: '18840839901'
+    passwd: 'dpj15842856657'
+    verifycode: '8888'
+    result: 'success'
+
+  # 输入的内容前面带有空格
+  - username: ' 18840839901'
+    passwd: ' dpj15842856657'
+    verifycode: '8888'   # 验证码前后有空格，会导致校验失败!
+    result: 'success'
+
+  # 输入的内容后面带有空格
+  - username: '18840839901 '
+    passwd: 'dpj15842856657 '
+    verifycode: '8888'  # 验证码前后有空格，会导致校验失败!
+    result: 'success'
+
+login_fail:
+  - username: '18840839902'
+    passwd: 'dpj15842856657'
+    verifycode: '8888'
+    result: '账号不存在!'
+
+  - username: '18840839901'
+    passwd: 'dpj15842856658'
+    verifycode: '8888'
+    result: '密码错误!'
+
+  - username: '18840839901'
+    passwd: 'dpj15842856657'
+    verifycode: '8887'
+    result: '验证码错误'
+
+  - username: ''
+    passwd: 'dpj15842856657'
+    verifycode: '8888'
+    result: '用户名不能为空!'
+
+  - username: '18840839901'
+    passwd: ''
+    verifycode: '8888'
+    result: '密码不能为空!'
+
+  - username: '18840839901'
+    passwd: 'dpj15842856657'
+    verifycode: ''
+    result: '验证码不能为空!'
+
+  - username: ''
+    passwd: ''
+    verifycode: '8888'
+    result: '用户名不能为空!'
+
+  - username: ''
+    passwd: 'dpj15842856657'
+    verifycode: ''
+    result: '用户名不能为空!'
+
+  - username: '18840839901'
+    passwd: ''
+    verifycode: ''
+    result: '密码不能为空!'
+
+  - username: ''
+    passwd: ''
+    verifycode: ''
+    result: '用户名不能为空!'
+
+  # 用户名禁止带有特殊符号
+  - username: '"'
+    passwd: 'dpj15842856657'
+    verifycode: '8888'
+    result: '账号格式不匹配!'
+
+  # 用户名禁止带有特殊符号
+  - username: '--'
+    passwd: 'dpj15842856657'
+    verifycode: '8888'
+    result: '账号格式不匹配!'
