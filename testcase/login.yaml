@@ -1,5 +1,4 @@
 login_success:
-
   # 正常登录场景
   - username: '18840839901'
     passwd: 'dpj15842856657'
